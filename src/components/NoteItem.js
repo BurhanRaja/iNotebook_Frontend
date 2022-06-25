@@ -2,7 +2,7 @@
 import React from 'react'
 
 const NoteItem = (props) => {
-    const {note, color} = props
+    const {note} = props
     return (
         <div className='col-md-4 my-2'>
             <div className="card border-dark mb-3">

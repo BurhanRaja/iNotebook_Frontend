@@ -2,7 +2,6 @@ import React from 'react'
 import Note from './Note'
 
 const Home = () => {
-    const tags = ["Work", "Personal", "School", "Travel"]
     return (
         <div>
             <div className='container my-5'>
@@ -23,7 +22,7 @@ const Home = () => {
                         </div>
 
                     <div className='text-center my-5' >
-                        <button type="button" style={{"width":"50%"}} class="btn btn-success px-5 py-2">Add</button>
+                        <button type="button" style={{"width":"50%"}} className="btn btn-success px-5 py-2">Add</button>
                     </div>
                 </form>
                 <Note />

@@ -22,7 +22,7 @@ const NoteState = (props) => {
       "__v": 0
     },
     {
-      "_id": "62b4003c06626cd58010d00c",
+      "_id": "62b4003c06626cd58010d00c1",
       "user": "62b345c707d3953626308440",
       "title": "My title",
       "description": "Please I have to wake up early and study",
@@ -31,7 +31,7 @@ const NoteState = (props) => {
       "__v": 0
     },
     {
-      "_id": "62b400c806626cd58010d01a",
+      "_id": "62b400c806626cd58010d01a2",
       "user": "62b345c707d3953626308440",
       "title": "My Work title",
       "description": "I have to work till 8:00 PM",
@@ -40,7 +40,7 @@ const NoteState = (props) => {
       "__v": 0
     },
     {
-      "_id": "62b4003c06626cd58010d00c",
+      "_id": "62b4003c06626cd58010d00c3",
       "user": "62b345c707d3953626308440",
       "title": "My title",
       "description": "Please I have to wake up early and study",
@@ -49,7 +49,7 @@ const NoteState = (props) => {
       "__v": 0
     },
     {
-      "_id": "62b400c806626cd58010d01a",
+      "_id": "62b400c806626cd58010d01a4",
       "user": "62b345c707d3953626308440",
       "title": "My Work title",
       "description": "I have to work till 8:00 PM",
@@ -61,6 +61,8 @@ const NoteState = (props) => {
 
   const [notes, setnotes] = useState(noteInitial)
 
+
+  
   return (
     <noteContext.Provider value={{notes, setnotes}}>
       {props.children}
