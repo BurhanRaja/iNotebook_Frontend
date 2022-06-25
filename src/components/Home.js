@@ -6,10 +6,10 @@ const Home = () => {
     return (
         <div>
             <div className='container my-5'>
-                <h1>Add Your Note</h1>
+                <h1 className='text-center'>Add Your Note</h1>
                 <form className='my-3'>
                     <div className="form-floating">
-                        <input type="text" className="form-control" id="floatingInput" placeholder="title" style={{ "borderBottom": "none", "borderBottomLeftRadius": "1px", "borderBottomRightRadius": "1px" }} />
+                        <input type="text" className="form-control" id="floatingInput" placeholder="title" style={{  "borderBottomLeftRadius": "1px", "borderBottomRightRadius": "1px" }} />
                         <label htmlFor="floatingInput">Title</label>
                     </div>
                     <div className="form-floating">
@@ -17,20 +17,13 @@ const Home = () => {
                         <label htmlFor="floatingTextarea">Desciption Here</label>
                     </div>
                     <h4 className='my-3'>Tags</h4>
-                    <div className='d-flex'>
-                        {tags.map((tag) => {
-                            return <div className="form-check mx-2">
-                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                <label className="form-check-label" htmlFor="flexCheckDefault">
-                                    {tag}
-                                </label>
-                            </div>
-                        })}
-                        <div className="form-check mx-2 d-flex">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                            <label htmlFor="inputAddress" className="form-label mx-2 my-0">Other:</label>
-                            <input type="text" className="form-control py-1" id="inputAddress" placeholder="eg: Food" style={{ "width": "80%" }} />
+                        <div className="mb-3">
+                            <input type="text" className="form-control py-1" id="inputAddress" placeholder="eg: Work, Personal.." />
+                            <small>You can also add Multiple tags. For example:- Work | Personal | Travel</small>
                         </div>
+
+                    <div className='text-center my-5' >
+                        <button type="button" style={{"width":"50%"}} class="btn btn-success px-5 py-2">Add</button>
                     </div>
                 </form>
                 <Note />

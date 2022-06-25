@@ -5,7 +5,7 @@ const NoteItem = (props) => {
     const {note, color} = props
     return (
         <div className='col-md-4 my-2'>
-            <div className="card border-dark mb-3" style={{ "width": "18rem" }}>
+            <div className="card border-dark mb-3">
                 <div className='d-flex flex-row-reverse'>
                     <button type="button" className="btn btn-sm"><box-icon name='trash'></box-icon></button>
                     <button type="button" className="btn btn-sm"><box-icon name='edit-alt'></box-icon></button>
