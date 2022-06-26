@@ -1,10 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import noteContext from '../context/notes/noteContext'
 import NoteItem from './NoteItem'
 
 const Note = () => {
     const context = useContext(noteContext)
-    const { notes } = context
+    const { notes, getNotes } = context
+
+    useEffect(() => {
+        getNotes()
+    }, [])
+    
 
     return (
         <div>
@@ -13,8 +18,10 @@ const Note = () => {
                 <div className="row my-5">
                     
                     {notes.map((note) => {
+                        console.log(note._id)
                         return <NoteItem key={note._id} note={note} />
                     })}
+
                 </div>
             </div>
         </div>
