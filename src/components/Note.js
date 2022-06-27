@@ -4,24 +4,25 @@ import NoteItem from './NoteItem'
 
 const Note = () => {
     const context = useContext(noteContext)
-    const { notes, getNotes } = context
+    const { notes, getNotes, updateNote } = context
     
     useEffect(() => {
         getNotes()
     }, [])
 
     const ref = useRef(null)
-    const [note, setNote] = useState({etitle:"", edescription:"", etags:""})
+    const refClose = useRef(null)
+    const [note, setNote] = useState({eid:"", etitle:"", edescription:"", etags:""})
 
     const updateNoteMethod = (currentnote) => {
         ref.current.click()
-        setNote({etitle: currentnote.title, edescription: currentnote.description, etags: currentnote.tags})
+        setNote({eid: currentnote._id, etitle: currentnote.title, edescription: currentnote.description, etags: currentnote.tags})
     }
     
-    const handleupdateNote = (e) => {
+    const handleupdateNote = () => {
         console.log("Updating the Note...", note)
-        e.preventDefault()
-        // updateNote(note._id, etitle, edescription, etags)
+        updateNote(note.eid, note.etitle, note.edescription, note.etags)
+        refClose.current.click()
     }
 
     const onChange = (e) => {
@@ -40,7 +41,7 @@ const Note = () => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">Update Your Note</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button ref={refClose} type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
                             <form className='my-3'>
