@@ -18,7 +18,6 @@ const NoteState = (props) => {
     })
 
     const jsonNotes = await response.json()
-    // console.log(json)
     setnotes(jsonNotes)
   }
 
@@ -47,7 +46,6 @@ const NoteState = (props) => {
       }
     })
     const json = response.json()
-    console.log(json)
 
     // returning the notes not equal to the id 
     // For client side delete
@@ -67,7 +65,6 @@ const NoteState = (props) => {
     });
 
     const json = await response.json()
-    console.log(json)
 
     // Cannot update setnotes directly using notes
     // For Client side

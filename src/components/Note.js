@@ -20,7 +20,6 @@ const Note = () => {
     }
     
     const handleupdateNote = () => {
-        console.log("Updating the Note...", note)
         updateNote(note.eid, note.etitle, note.edescription, note.etags)
         refClose.current.click()
     }
@@ -46,11 +45,15 @@ const Note = () => {
                         <div className="modal-body">
                             <form className='my-3'>
                                 <div className="form-floating">
-                                    <input type="text" className="form-control" name='etitle' id="etitle" placeholder="title" style={{ "borderBottomLeftRadius": "1px", "borderBottomRightRadius": "1px" }} onChange={onChange} value={note.etitle} />
+                                    <input type="text" className="form-control" name='etitle' id="etitle" placeholder="title" 
+                                    style={{ "borderBottomLeftRadius": "1px", "borderBottomRightRadius": "1px" }} 
+                                    onChange={onChange} value={note.etitle} />
                                     <label htmlFor="title">Title</label>
                                 </div>
                                 <div className="form-floating">
-                                    <textarea className="form-control" placeholder="Leave a comment here" id="edescription" name='edescription' style={{ "height": "200px", "borderTop": "none", "borderTopLeftRadius": "1px", "borderTopRightRadius": "1px" }} onChange={onChange} value={note.edescription}></textarea>
+                                    <textarea className="form-control" placeholder="Leave a comment here" id="edescription" name='edescription' 
+                                    style={{ "height": "200px", "borderTop": "none", "borderTopLeftRadius": "1px", "borderTopRightRadius": "1px" }} 
+                                    onChange={onChange} value={note.edescription}></textarea>
                                     <label htmlFor="description">Desciption Here</label>
                                 </div>
                                 <h4 className='my-3'>Tag</h4>
@@ -61,17 +64,18 @@ const Note = () => {
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button onClick={handleupdateNote} type="button" className="btn btn-success">Update Note</button>
+                            <button disabled={note.etitle.length<5 || note.edescription.length<5} onClick={handleupdateNote} type="button" className="btn btn-success">Update Note</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <h2 className='my-5'>Your Current Notes</h2>
+            <h2 className='mt-5 mb-2'>Your Current Notes</h2>
             <div className="container">
-                <div className="row my-5">
-
+                <div className="row my-3">
+                    <div className='text-center' style={{"fontWeight":"bold", "fontSize":"17px"}}>
+                    {notes.length===0 && 'No Notes to display'}
+                    </div>
                     {notes.map((note) => {
-                        console.log(note._id)
                         return <NoteItem key={note._id} note={note} updateNoteMethod={updateNoteMethod} />
                     })}
 
