@@ -13,7 +13,7 @@ const NoteState = (props) => {
       method: "GET",
       headers: {
         'Content-Type': 'application/json',
-        "authentication-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiMzQ1YzcwN2QzOTUzNjI2MzA4NDQwIn0sImlhdCI6MTY1NjI1MzM5OH0.PjWixmeom0F_0MNxy7QtQ1FceRTYUNMgFAldeXKBFM8"
+        "authentication-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiMzQ1YzcwN2QzOTUzNjI2MzA4NDQwIn0sImlhdCI6MTY1NjMwNTMzNH0.UC4rvlU_PjnCGU6AeNX7j1Xzp9TwUX4D_aW3bnfo2Xw"
       }
     })
 
@@ -29,7 +29,7 @@ const NoteState = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "authentication-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiMzQ1YzcwN2QzOTUzNjI2MzA4NDQwIn0sImlhdCI6MTY1NjI1MzM5OH0.PjWixmeom0F_0MNxy7QtQ1FceRTYUNMgFAldeXKBFM8"
+        "authentication-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiMzQ1YzcwN2QzOTUzNjI2MzA4NDQwIn0sImlhdCI6MTY1NjMwNTMzNH0.UC4rvlU_PjnCGU6AeNX7j1Xzp9TwUX4D_aW3bnfo2Xw"
       },
       body: JSON.stringify({ title, description, tags })
     });
@@ -43,7 +43,7 @@ const NoteState = (props) => {
     const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
       method: "DELETE",
       headers: {
-        "authentication-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiMzQ1YzcwN2QzOTUzNjI2MzA4NDQwIn0sImlhdCI6MTY1NjI1MzM5OH0.PjWixmeom0F_0MNxy7QtQ1FceRTYUNMgFAldeXKBFM8"
+        "authentication-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiMzQ1YzcwN2QzOTUzNjI2MzA4NDQwIn0sImlhdCI6MTY1NjMwNTMzNH0.UC4rvlU_PjnCGU6AeNX7j1Xzp9TwUX4D_aW3bnfo2Xw"
       }
     })
     const json = response.json()
@@ -61,7 +61,7 @@ const NoteState = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "authentication-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiMzQ1YzcwN2QzOTUzNjI2MzA4NDQwIn0sImlhdCI6MTY1NjI1MzM5OH0.PjWixmeom0F_0MNxy7QtQ1FceRTYUNMgFAldeXKBFM8"
+        "authentication-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiMzQ1YzcwN2QzOTUzNjI2MzA4NDQwIn0sImlhdCI6MTY1NjMwNTMzNH0.UC4rvlU_PjnCGU6AeNX7j1Xzp9TwUX4D_aW3bnfo2Xw"
       },
       body: JSON.stringify({ title, description, tags })
     });
