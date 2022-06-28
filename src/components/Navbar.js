@@ -1,22 +1,13 @@
 import React from 'react'
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import getuserContext from '../context/users/getuserContext';
 
 const Navbar = () => {
 
-    // const context = useContext(getuserContext)
-    // const { getUser} = context
-
     let navigate = useNavigate()
     const handleLogout = () => {
-        localStorage.removeItem('token')
+        localStorage.clear()
         navigate("/login")
     }
-
-    // useEffect(() => {
-    //     getUser()
-    // }, [])
-    
 
     // To Highlight the page name on navbar
     const location = useLocation()

@@ -24,7 +24,6 @@ const Login = (props) => {
         });
 
         const jsonRes = await response.json()
-        console.log(jsonRes)
 
         if (jsonRes.success) {
             localStorage.setItem('token', jsonRes.authToken)
