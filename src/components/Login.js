@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-// import login from '../public/Login-signup.png'
+import loginpic from "../assets/Login-signup.png"
+import "../css/login.css"
 
 const Login = () => {
     const [credentials, setCredentials] = useState({ email: "", password: "" })
@@ -23,12 +24,9 @@ const Login = () => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
     return (
-        <div className='container my-5'>
-            <div className='imageLog'>
-                image
-                {/* <img src={login} alt="description of image"/> */}
-            </div>
-            <form onSubmit={handleLogin}>
+        <div className='container my-5 loginContainer'>
+                <img className='loginImage' src={loginpic} alt="something"/>
+            <form onSubmit={handleLogin} className="loginForm">
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
                     <input type="email" className="form-control" id="email" name='email' aria-describedby="emailHelp" onChange={onChange} value={credentials.email} />
@@ -38,7 +36,9 @@ const Login = () => {
                     <label htmlFor="password" className="form-label">Password</label>
                     <input type="password" className="form-control" id="password" name='password' onChange={onChange} value={credentials.password} />
                 </div>
-                <button type="submit" className="btn btn-primary" >Submit</button>
+                <div className='text-center'>
+                    <button type="submit" className="btn btn-primary" >Submit</button>
+                </div>
             </form>
         </div>
     )

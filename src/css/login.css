@@ -1,0 +1,29 @@
+.loginForm {
+    width: 32%;
+    padding: 80px 12px 10px; 
+    background-color:aliceblue; 
+    border-radius:4px;
+}
+
+.loginImage {
+    height:auto; 
+    width:46%;
+    margin: 0% 0% 0% 6%;
+}
+
+.loginContainer {
+    display: flex;
+}
+
+@media only screen and (max-width:1000px) {
+    .loginImage {
+        display: none;
+    }
+    .loginContainer {
+        display: block;
+    }
+    .loginForm {
+        width: 100%;
+        padding: 20px 12px 10px;
+    }
+}
