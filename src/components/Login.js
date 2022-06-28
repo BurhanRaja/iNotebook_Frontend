@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link, useNavigate } from "react-router-dom";
 import loginpic from "../assets/Login-signup.png"
 import "../css/login.css"
 
@@ -6,6 +7,8 @@ const Login = () => {
     // Using useState to pass the data for login
     const [credentials, setCredentials] = useState({ email: "", password: "" })
     const host = "http://localhost:5000"
+
+    let navigate = useNavigate()
     
     // Login by submitting form
     const handleLogin = async (e) => {
@@ -21,6 +24,15 @@ const Login = () => {
 
         const jsonRes = await response.json()
         console.log(jsonRes)
+
+        if (jsonRes.success) {
+            localStorage.setItem('token', jsonRes.authtoken)
+            navigate("/")
+            
+        }
+        else {
+            alert("Invalid Credentials")
+        }
     }
 
     // To edit form
@@ -41,7 +53,9 @@ const Login = () => {
                     <input type="password" className="form-control" id="password" name='password' onChange={onChange} value={credentials.password} />
                 </div>
                 <div className='text-center'>
-                    <button type="submit" className="btn btn-primary" >Submit</button>
+                    <button type="submit" className="btn btn-primary my-2" >Login</button>
+                    <p>Or</p>
+                    <Link className="btn btn-outline-primary" to="/signUp">Create an Account</Link>
                 </div>
             </form>
         </div>
