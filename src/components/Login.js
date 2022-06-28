@@ -27,7 +27,7 @@ const Login = (props) => {
         console.log(jsonRes)
 
         if (jsonRes.success) {
-            localStorage.setItem('token', jsonRes.authtoken)
+            localStorage.setItem('token', jsonRes.authToken)
             navigate("/")
             props.showAlerts("You have successfully logged in", "success")
         }
@@ -44,6 +44,7 @@ const Login = (props) => {
         <div className='container my-5 loginContainer'>
                 <img className='loginImage' src={loginpic} alt="something"/>
             <form onSubmit={handleLogin} className="loginForm">
+            <h2 className='text-center'>Login</h2>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
                     <input type="email" className="form-control" id="email" name='email' aria-describedby="emailHelp" onChange={onChange} value={credentials.email} />

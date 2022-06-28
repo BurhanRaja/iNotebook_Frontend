@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import noteContext from '../context/notes/noteContext'
 import NoteItem from './NoteItem'
 
 const Note = (props) => {
 
     const {showAlerts} = props
+    let navigate = useNavigate()
 
     // using context api from "../context"
     const context = useContext(noteContext)
@@ -14,7 +16,12 @@ const Note = (props) => {
     
     // All Notes render it on the client side
     useEffect(() => {
-        getNotes()
+        if (localStorage.getItem('token')) {
+            getNotes()
+        }
+        else {
+            navigate("/login")
+        }
     }, [])
 
     // Using it to open the edit modal to update the note

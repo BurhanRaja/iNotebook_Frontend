@@ -1,7 +1,22 @@
 import React from 'react'
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+// import getuserContext from '../context/users/getuserContext';
 
 const Navbar = () => {
+
+    // const context = useContext(getuserContext)
+    // const { getUser} = context
+
+    let navigate = useNavigate()
+    const handleLogout = () => {
+        localStorage.removeItem('token')
+        navigate("/login")
+    }
+
+    // useEffect(() => {
+    //     getUser()
+    // }, [])
+    
 
     // To Highlight the page name on navbar
     const location = useLocation()
@@ -22,10 +37,11 @@ const Navbar = () => {
                             <Link className={`nav-link ${location.pathname === '/about' ? "active" : ""}`} to="/about">About</Link>
                         </li>
                     </ul>
-                    <form className="text-center">
+                    {!localStorage.getItem('token')?<form className="text-center">
                             <Link className="btn btn-outline-info mx-2" to='/login'>Login</Link>
                             <Link className="btn btn-outline-info mx-2" to='/SignUp'>SignUp</Link>
-                    </form>
+                    </form> : <>
+                    <button className="btn btn-outline-info mx-2" onClick={handleLogout}>Logout</button> </>}
                 </div>
             </div>
         </nav>
