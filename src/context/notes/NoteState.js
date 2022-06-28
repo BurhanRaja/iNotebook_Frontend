@@ -45,6 +45,7 @@ const NoteState = (props) => {
         "authentication-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjJiMzQ1YzcwN2QzOTUzNjI2MzA4NDQwIn0sImlhdCI6MTY1NjMwNTMzNH0.UC4rvlU_PjnCGU6AeNX7j1Xzp9TwUX4D_aW3bnfo2Xw"
       }
     })
+    // eslint-disable-next-line
     const json = response.json()
 
     // returning the notes not equal to the id 
@@ -64,6 +65,7 @@ const NoteState = (props) => {
       body: JSON.stringify({ title, description, tags })
     });
 
+    // eslint-disable-next-line
     const json = await response.json()
 
     // Cannot update setnotes directly using notes

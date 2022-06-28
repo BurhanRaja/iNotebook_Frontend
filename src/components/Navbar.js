@@ -21,8 +21,8 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <form className="d-flex">
-                            <button className="btn btn-outline-success mx-2">Login</button>
-                            <button className="btn btn-outline-success mx-2">SignUp</button>
+                            <Link className="btn btn-outline-info mx-2" to='/login'>Login</Link>
+                            <Link className="btn btn-outline-info mx-2" to='/SignUp'>SignUp</Link>
                     </form>
                 </div>
             </div>

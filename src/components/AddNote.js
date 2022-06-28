@@ -42,7 +42,7 @@ const AddNote = () => {
                 </div>
 
                 <div className='text-center my-5' >
-                    <button disabled={note.title.length < 5 || note.description.length < 5} type="button" style={{ "width": "50%" }} onClick={handleAddNote} className="btn btn-success px-5 py-2">Add</button>
+                    <button disabled={note.title.length < 5 || note.description.length < 5} type="button" style={{ "width": "50%", "backgroundColor":"#0049a3" }} onClick={handleAddNote} className="btn btn-success px-5 py-2">Add</button>
                 </div>
             </form>
         </>

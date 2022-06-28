@@ -17,7 +17,7 @@ const NoteItem = (props) => {
                     <p className="card-text">{note.description}</p>
                 </div>
                 <hr className='hr hr-dark' />
-                <h6 className='mx-3'><span className="badge bg-danger" style={{ "fontSize": "13px" }}>{note.tags}</span></h6>
+                <h6 className='mx-3'><span className="badge bg-primary" style={{ "fontSize": "13px"}}>{note.tags}</span></h6>
             </div>
         </div>
     )
