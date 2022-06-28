@@ -3,11 +3,14 @@ import loginpic from "../assets/Login-signup.png"
 import "../css/login.css"
 
 const Login = () => {
+    // Using useState to pass the data for login
     const [credentials, setCredentials] = useState({ email: "", password: "" })
     const host = "http://localhost:5000"
     
+    // Login by submitting form
     const handleLogin = async (e) => {
         e.preventDefault()
+        // For server side
         const response = await fetch(`${host}/api/auth/login`, {
             method: 'POST',
             headers: {
@@ -20,6 +23,7 @@ const Login = () => {
         console.log(jsonRes)
     }
 
+    // To edit form
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }

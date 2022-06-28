@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import noteContext from "./noteContext"
 
 const NoteState = (props) => {
-  const host = "http://localhost:5000"
+  const host = "http://localhost:5000" // backend URL
   const noteInitial = []
 
   const [notes, setnotes] = useState(noteInitial)
 
-  // Add Note
+  // Get all Notes
   const getNotes = async () => {
+    // For server side
     const response = await fetch(`${host}/api/notes/fetchallnotes`, {
       method: "GET",
       headers: {
@@ -17,13 +18,14 @@ const NoteState = (props) => {
       }
     })
 
+    // For client side
     const jsonNotes = await response.json()
     setnotes(jsonNotes)
   }
 
-  // Add Note
+  // Add a Note
   const addNote = async (title, description, tags) => {
-
+    // For server side
     const response = await fetch(`${host}/api/notes/addnote`, {
       method: 'POST',
       headers: {
@@ -33,6 +35,7 @@ const NoteState = (props) => {
       body: JSON.stringify({ title, description, tags })
     });
 
+    // For client side
     setnotes(notes.concat(await response.json()))
   }
 
@@ -53,9 +56,10 @@ const NoteState = (props) => {
     const newNote = notes.filter((note)=>{return note._id !== id})
     setnotes(newNote)
   }
+
   // Update Note
   const updateNote = async (id, title, description, tags) => {
-    // API Call 
+    // For server side 
     const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
       method: 'PUT',
       headers: {
@@ -68,7 +72,7 @@ const NoteState = (props) => {
     // eslint-disable-next-line
     const json = await response.json()
 
-    // Cannot update setnotes directly using notes
+
     // For Client side
     let newNotes = JSON.parse(JSON.stringify(notes))
     for (let index = 0; index < newNotes.length; index++) {

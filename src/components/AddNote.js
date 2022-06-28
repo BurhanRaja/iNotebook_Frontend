@@ -2,15 +2,21 @@ import React, { useContext, useState } from 'react'
 import noteContext from '../context/notes/noteContext'
 
 const AddNote = () => {
+    // using context api from "../context" 
     const context = useContext(noteContext)
+
+    // Fetching function to add a note from "../context/note/NoteState"
     const { addNote } = context
 
+    // Using useState to pass the data to add a note
     const [note, setNote] = useState({ title: "", description: "", tags: "" })
 
+    // To edit form
     const onChange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value })
     }
 
+    // Handling the adding of a note
     const handleAddNote = (e) => {
         e.preventDefault()
         addNote(note.title, note.description, note.tags)

@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+
+    // To Highlight the page name on navbar
     const location = useLocation()
 
     return (

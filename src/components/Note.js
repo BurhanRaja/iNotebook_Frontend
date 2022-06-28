@@ -3,27 +3,39 @@ import noteContext from '../context/notes/noteContext'
 import NoteItem from './NoteItem'
 
 const Note = () => {
+    // using context api from "../context"
     const context = useContext(noteContext)
+
+    // Fetching function to fetchAllNotes, updateNotes from "../context/note/NoteState"
     const { notes, getNotes, updateNote } = context
     
+    // All Notes render it on the client side
     useEffect(() => {
         getNotes()
     }, [])
 
+    // Using it to open the edit modal to update the note
     const ref = useRef(null)
+
+    // Using it to close after update is submitted
     const refClose = useRef(null)
+
+    // Using useState to pass the data to update it
     const [note, setNote] = useState({eid:"", etitle:"", edescription:"", etags:""})
 
+    // To update the noteItem on client side
     const updateNoteMethod = (currentnote) => {
         ref.current.click()
         setNote({eid: currentnote._id, etitle: currentnote.title, edescription: currentnote.description, etags: currentnote.tags})
     }
     
+    // To update note on server side
     const handleupdateNote = () => {
         updateNote(note.eid, note.etitle, note.edescription, note.etags)
         refClose.current.click()
     }
 
+    // To edit form
     const onChange = (e) => {
         setNote({...note, [e.target.name]: e.target.value})
     }

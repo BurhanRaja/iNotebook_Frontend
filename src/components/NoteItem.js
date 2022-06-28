@@ -2,8 +2,13 @@ import React, { useContext } from 'react'
 import noteContext from '../context/notes/noteContext'
 
 const NoteItem = (props) => {
+    // using context api from "../context" 
     const context = useContext(noteContext)
+
+    // Fetching function to delete from "../context/note/NoteState"
     const { deleteNote } = context
+
+    // Props from Note component
     const {note, updateNoteMethod} = props
     return (
         <div className='col-md-4 my-2'>
