@@ -2,7 +2,10 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../context/notes/noteContext'
 import NoteItem from './NoteItem'
 
-const Note = () => {
+const Note = (props) => {
+
+    const {showAlerts} = props
+
     // using context api from "../context"
     const context = useContext(noteContext)
 
@@ -32,6 +35,7 @@ const Note = () => {
     // To update note on server side
     const handleupdateNote = () => {
         updateNote(note.eid, note.etitle, note.edescription, note.etags)
+        showAlerts("Note has been updated", "success")
         refClose.current.click()
     }
 
@@ -81,14 +85,14 @@ const Note = () => {
                     </div>
                 </div>
             </div>
-            <h2 className='mt-5 mb-2'>Your Current Notes</h2>
+            <h2 className='mt-5 mb-4 text-center'>Your Current Notes</h2>
             <div className="container">
                 <div className="row my-3">
                     <div className='text-center' style={{"fontWeight":"bold", "fontSize":"17px"}}>
                     {notes.length===0 && 'No Notes to display'}
                     </div>
                     {notes.map((note) => {
-                        return <NoteItem key={note._id} note={note} updateNoteMethod={updateNoteMethod} />
+                        return <NoteItem key={note._id} showAlerts={showAlerts} note={note} updateNoteMethod={updateNoteMethod} showAlert={props.showAlert} />
                     })}
 
                 </div>

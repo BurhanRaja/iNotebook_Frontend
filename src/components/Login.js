@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import loginpic from "../assets/Login-signup.png"
 import "../css/login.css"
 
-const Login = () => {
+const Login = (props) => {
+
     // Using useState to pass the data for login
     const [credentials, setCredentials] = useState({ email: "", password: "" })
     const host = "http://localhost:5000"
@@ -28,10 +29,10 @@ const Login = () => {
         if (jsonRes.success) {
             localStorage.setItem('token', jsonRes.authtoken)
             navigate("/")
-            
+            props.showAlerts("You have successfully logged in", "success")
         }
         else {
-            alert("Invalid Credentials")
+            props.showAlerts("Invalid Credentials", "warning")
         }
     }
 
