@@ -11,7 +11,7 @@ const NoteItem = (props) => {
     // Props from Note component
     const {note, updateNoteMethod} = props
     return (
-        <div className='col-md-4 my-2'>
+        <div>
             <div className="card border-dark mb-3">
                 <div className='d-flex flex-row-reverse'>
                     <button type="button" className="btn btn-sm"><box-icon name='trash' onClick={()=>{deleteNote(note._id) 

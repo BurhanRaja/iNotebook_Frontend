@@ -40,7 +40,7 @@ const SignUp = (props) => {
     return (
         <div>
             <div className='container my-5 loginContainer'>
-            <img className='loginImage' style={{"margin": "0% 0% 0% 4%"}} src={loginpic} alt="something"/>
+            <img className='' style={{"height": "auto", "width": "53%"}} src={loginpic} alt="something"/>
             <form className='loginForm' style={{"backgroundColor":"aliceblue", "padding":"30px 30px", "width": "36%"}} onSubmit={handleSignup}>
                 <h2 className='text-center'>SignUp</h2>
                 <div className="mb-3">
