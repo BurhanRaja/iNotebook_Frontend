@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import noteContext from "./noteContext"
 
 const NoteState = (props) => {
-  const host = "http://localhost:5000" // backend URL
+  const host = "https://project-inotebook.herokuapp.com" // backend URL
   const noteInitial = []
 
   const [notes, setnotes] = useState(noteInitial)
@@ -21,6 +21,7 @@ const NoteState = (props) => {
     // For client side
     const jsonNotes = await response.json()
     setnotes(jsonNotes)
+
   }
 
   // Add a Note
@@ -34,7 +35,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tags })
     });
-
+    
     // For client side
     setnotes(notes.concat(await response.json()))
   }
@@ -48,6 +49,7 @@ const NoteState = (props) => {
         "authentication-token": localStorage.getItem('token')
       }
     })
+
     // eslint-disable-next-line
     const json = response.json()
 
@@ -87,7 +89,7 @@ const NoteState = (props) => {
   }
 
   return (
-    <noteContext.Provider value={{ notes, setnotes, addNote, deleteNote, updateNote, getNotes }}>
+    <noteContext.Provider value={{ notes, setnotes, addNote, deleteNote, updateNote, getNotes,   }}>
       {props.children}
     </noteContext.Provider>
   )

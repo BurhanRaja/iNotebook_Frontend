@@ -7,7 +7,7 @@ const Login = (props) => {
 
     // Using useState to pass the data for login
     const [credentials, setCredentials] = useState({ email: "", password: "" })
-    const host = "http://localhost:5000"
+    const host = "https://project-inotebook.herokuapp.com"
 
     let navigate = useNavigate()
     
