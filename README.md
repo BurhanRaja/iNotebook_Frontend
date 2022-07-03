@@ -54,9 +54,5 @@ This frontend contains 4 pages Home, About, Login and Sigup.
 
 4. Technologies used for FrontEnd
 
-![image](https://user-images.githubusercontent.com/76507095/176988902-b8fe586b-fb31-4b2c-b8e9-7f7285a40f33.png)
+<p align="left"> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> </p>
 
-![image](https://user-images.githubusercontent.com/76507095/176988910-aecfa58f-f093-4bc6-8720-d58d55f378bd.png)
-![image](https://user-images.githubusercontent.com/76507095/176988926-51fcd0c1-4212-496b-8fc2-c23ab0b54f11.png)
-
-![image](https://user-images.githubusercontent.com/76507095/176988919-383b95f7-2aba-4896-8b1d-e9bdbb090bb1.png)
