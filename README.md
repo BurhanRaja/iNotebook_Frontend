@@ -1,7 +1,9 @@
 # iNotebook_Frontend
 
 ## Project Demo
-https://user-images.githubusercontent.com/76507095/176988461-d3ab1981-24ef-435b-987b-7dcb6db1db6a.mp4
+
+https://user-images.githubusercontent.com/76507095/177167519-77572700-0d78-46d7-a0be-eea17fe2c556.mp4
+
 
 1. Description 
 
